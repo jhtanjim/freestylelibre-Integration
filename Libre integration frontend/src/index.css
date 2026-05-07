@@ -1,0 +1,72 @@
+/* ─── Google Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─── Tabler Icons ─── */
+@import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css');
+
+/* ─── Design tokens ─── */
+:root {
+  --bg:       #f8fafc;
+  --card:     #ffffff;
+  --border:   #e2e8f0;
+  --text:     #0f172a;
+  --muted:    #64748b;
+  --faint:    #f1f5f9;
+
+  /* Semantic colors */
+  --accent:   #0ea5e9;   /* sky blue — primary brand */
+  --success:  #10b981;   /* in range */
+  --warn:     #f59e0b;   /* high readings */
+  --low:      #6366f1;   /* low readings */
+  --danger:   #ef4444;   /* errors */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:     #0b0f1a;
+    --card:   #111827;
+    --border: #1e293b;
+    --text:   #f1f5f9;
+    --muted:  #64748b;
+    --faint:  #1e293b;
+  }
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Base ─── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Utility ─── */
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* ─── Focus ─── */
+input:focus, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+button:active { opacity: 0.85; }
+
+/* ─── Placeholder ─── */
+::placeholder { color: #94a3b8 !important; }
+
+/* ─── Animations ─── */
+@keyframes spin  { to { transform: rotate(360deg); } }
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);   }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ─── Scrollbar (webkit) ─── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--faint); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
